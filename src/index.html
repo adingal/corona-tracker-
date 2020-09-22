@@ -6,12 +6,33 @@
     <meta name="description" content="A simple COVID19 tracker">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
+    <header class="site-header py-4 pt-lg-5 ">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-lg-7 mb-3 mb-lg-0 text-center text-lg-left">
+                    <h1 class="m-0">COVID19 Tracker</h1>
+                    <small>WPinoy</small>
+                </div>
+                <div class="col-lg-5">
+                    <div class="input-group justify-content-center justify-content-lg-end">
+                        <div class="input-group-prepend align-items-center">
+                            <label class="m-0" for="country">Country</label>
+                        </div>
+                        <select name="country" class="form-control">
+                            <option value="PH">Philippines</option>
+                            <option value="US">United States of America</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
     
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

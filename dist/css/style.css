@@ -1,1 +1,23 @@
+body {
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+}
 
+.site-header small {
+    display: block;
+    margin: -7px 0 0 5px;
+}
+
+.site-header {
+    background: #eee;
+    border-bottom: 1px solid #ddd;
+}
+
+.input-group > div {
+    border: 1px solid #ced4da;
+    border-radius: 5px 0 0 5px;
+    padding: 0 8px;
+}
+
+.input-group > select {
+    max-width: 260px;
+}
