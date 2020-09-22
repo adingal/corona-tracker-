@@ -16,13 +16,13 @@
         <div class="container">
             <div class="row justify-content-center align-items-center">
                 <div class="col-lg-7 mb-3 mb-lg-0 text-center text-lg-left">
-                    <h1 class="m-0">COVID19 Tracker</h1>
-                    <small>WPinoy</small>
+                    <p class="h2 m-0">COVID19 Tracker</p>
+                    <small class="text-muted">WPinoy</small>
                 </div>
                 <div class="col-lg-5">
                     <div class="input-group justify-content-center justify-content-lg-end">
                         <div class="input-group-prepend align-items-center">
-                            <label class="m-0" for="country">Country</label>
+                            <label class="text-muted m-0" for="country">Country</label>
                         </div>
                         <select id="country" name="country" class="form-control">
 
@@ -32,6 +32,72 @@
             </div>
         </div>
     </header>
+
+    <div class="selected-country pt-5 pb-4">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <h1 class="m-0">Philippines - <span>PH</span></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="site-content py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 mr-auto">
+                    <div class="data py-3">
+                        <h2 class="text-muted text-center">Data</h2>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label class="text-muted w-100 text-center" for="population">Estimated Population</label>
+                                <input type="text" name="population" class="form-control">
+                            </div>
+                            <div class="col-lg-6">
+                                <label class="text-muted w-100 text-center" for="date-updated">Date Updated</label>
+                                <input type="text" name="date-updated" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="today py-3">
+                        <h2 class="text-muted text-center">Today</h2>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label class="text-muted w-100 text-center" for="today-deaths">Deaths</label>
+                                <input type="text" name="today-deaths" class="form-control">
+                            </div>
+                            <div class="col-lg-6">
+                                <label class="text-muted w-100 text-center" for="today-confirmed">Confirmed</label>
+                                <input type="text" name="today-confirmed" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="tally py-3">
+                        <h2 class="text-muted text-center">Tally</h2>
+                        <div class="form-group">
+                            <label class="text-muted w-100 text-center" for="tally-deaths">Deaths</label>
+                            <input type="text" name="tally-deaths" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label class="text-muted w-100 text-center" for="tally-confirmed">Confirmed</label>
+                            <input type="text" name="tally-confirmed" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label class="text-muted w-100 text-center" for="recovered">Recovered</label>
+                            <input type="text" name="recovered" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label class="text-muted w-100 text-center" for="critical">Critical</label>
+                            <input type="text" name="critical" class="form-control">
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
 
     <footer class="site-footer py-4">
         <div class="container">

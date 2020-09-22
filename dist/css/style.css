@@ -4,7 +4,7 @@ body {
 
 .site-header small {
     display: block;
-    margin: -7px 0 0 5px;
+    margin: -5px 0 0 5px;
 }
 
 .site-header,
@@ -24,4 +24,22 @@ body {
 
 .input-group > select {
     max-width: 260px;
+}
+
+.selected-country h1,
+.site-header p,
+h2 {
+    text-shadow: 2px 2px 2px rgba(0,0,0,.3);
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+.site-content {
+    min-height: 470px;
 }
