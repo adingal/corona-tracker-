@@ -33,10 +33,10 @@
         </div>
     </header>
 
-    <div class="selected-country pt-5 pb-4">
+    <div class="selected-country pt-5 pb-0 pb-lg-4">
         <div class="container">
             <div class="row">
-                <div class="col text-center">
+                <div class="col">
                     <h1 class="m-0">Philippines - <span>PH</span></h1>
                 </div>
             </div>
@@ -47,53 +47,44 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-7 mr-auto">
-                    <div class="data py-3">
-                        <h2 class="text-muted text-center">Data</h2>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <label class="text-muted w-100 text-center" for="population">Estimated Population</label>
-                                <input type="text" name="population" class="form-control">
-                            </div>
-                            <div class="col-lg-6">
-                                <label class="text-muted w-100 text-center" for="date-updated">Date Updated</label>
-                                <input type="text" name="date-updated" class="form-control">
-                            </div>
-                        </div>
-                    </div>
                     <div class="today py-3">
-                        <h2 class="text-muted text-center">Today</h2>
+                        <h2 class="text-muted">Today</h2>
                         <div class="row">
-                            <div class="col-lg-6">
-                                <label class="text-muted w-100 text-center" for="today-deaths">Deaths</label>
-                                <input type="text" name="today-deaths" class="form-control">
+                            <div class="col-lg-4 form-group">
+                                <label class="text-muted w-100" for="today-cases">New Cases</label>
+                                <input type="text" name="today-cases" class="form-control" disabled>
                             </div>
-                            <div class="col-lg-6">
-                                <label class="text-muted w-100 text-center" for="today-confirmed">Confirmed</label>
-                                <input type="text" name="today-confirmed" class="form-control">
+                            <div class="col-lg-4 form-group">
+                                <label class="text-muted w-100" for="today-deaths">New Deaths</label>
+                                <input type="text" name="today-deaths" class="form-control" disabled>
+                            </div>
+                            <div class="col-lg-4 form-group">
+                                <label class="text-muted w-100" for="active">Active</label>
+                                <input type="text" name="active" class="form-control" disabled>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="tally py-3">
-                        <h2 class="text-muted text-center">Tally</h2>
+                        <h2 class="text-muted">Total</h2>
                         <div class="form-group">
-                            <label class="text-muted w-100 text-center" for="tally-deaths">Deaths</label>
-                            <input type="text" name="tally-deaths" class="form-control">
+                            <label class="text-muted w-100" for="tally-confirmed">Cases</label>
+                            <input type="text" name="tally-confirmed" class="form-control" disabled>
                         </div>
                         <div class="form-group">
-                            <label class="text-muted w-100 text-center" for="tally-confirmed">Confirmed</label>
-                            <input type="text" name="tally-confirmed" class="form-control">
+                            <label class="text-muted w-100" for="recovered">Recovered</label>
+                            <input type="text" name="recovered" class="form-control" disabled>
                         </div>
                         <div class="form-group">
-                            <label class="text-muted w-100 text-center" for="recovered">Recovered</label>
-                            <input type="text" name="recovered" class="form-control">
+                            <label class="text-muted w-100" for="tally-deaths">Deaths</label>
+                            <input type="text" name="tally-deaths" class="form-control" disabled>
                         </div>
                         <div class="form-group">
-                            <label class="text-muted w-100 text-center" for="critical">Critical</label>
-                            <input type="text" name="critical" class="form-control">
+                            <label class="text-muted w-100" for="critical">Critical</label>
+                            <input type="text" name="critical" class="form-control" disabled>
                         </div>
-                    </div>                    
+                    </div>
                 </div>
             </div>
         </div>
@@ -102,8 +93,8 @@
     <footer class="site-footer py-4">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
-                    <p class="m-0 text-center text-lg-left">Credits to <a href="https://about-corona.net/">about-corona.net</a> for the free API.</p>
+                <div class="col-lg-6 mb-3 mb-lg-0">
+                    <p class="m-0 text-center text-lg-left">Credits to <a href="https://github.com/javieraviles">javieraviles</a> for the free API.</p>
                 </div>
                 <div class="col-lg-6">
                     <p class="m-0 text-center text-lg-right"><a href="https://adingal.com">adingal</a> &copy; <span class="year"></span></p>
