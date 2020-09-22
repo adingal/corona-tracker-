@@ -7,9 +7,13 @@ body {
     margin: -7px 0 0 5px;
 }
 
-.site-header {
+.site-header,
+.site-footer {
     background: #eee;
-    border-bottom: 1px solid #ddd;
+}
+
+.site-header {
+    border-bottom: 1px solid #ddd;    
 }
 
 .input-group > div {
