@@ -6,7 +6,6 @@ const items = {
     todayCases      : document.querySelector('[name="today-cases"]'),
     tallyDeaths     : document.querySelector('[name="tally-deaths"]'),
     tallyConfirmed  : document.querySelector('[name="tally-confirmed"]'),
-    tallyConfirmed  : document.querySelector('[name="tally-confirmed"]'),
     recovered       : document.querySelector('[name="recovered"]'),
     critical        : document.querySelector('[name="critical"]'),
     heading         : document.querySelector('h1'),
@@ -64,9 +63,9 @@ function createOptions(arr) {
 function fillInputs(obj) {
 
     items.heading.innerText    = obj.country;
-    items.active.value    = addCommas(obj.active);
+    items.active.value         = addCommas(obj.active);
     items.todayDeaths.value    = addCommas(obj.todayDeaths);
-    items.todayCases.value = addCommas(obj.todayCases);
+    items.todayCases.value     = addCommas(obj.todayCases);
     items.tallyDeaths.value    = addCommas(obj.deaths);
     items.tallyConfirmed.value = addCommas(obj.cases);
     items.recovered.value      = addCommas(obj.recovered);
@@ -99,6 +98,7 @@ getData()
     .then(res => createOptions(res))
     .catch(err => console.log(err));
 
+// Set default data for inputs
 getSelected()
     .then(res => {
         fillInputs(res);
