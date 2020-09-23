@@ -6,9 +6,114 @@
     <meta name="description" content="A simple COVID19 tracker">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+    <header class="site-header py-4 pt-lg-5">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-lg-7 mb-3 mb-lg-0 text-center text-lg-left">
+                    <p class="h2 m-0">COVID19 Tracker</p>
+                    <small class="text-muted">WPinoy</small>
+                </div>
+                <div class="col-lg-5">
+                    <div class="input-group justify-content-center justify-content-lg-end">
+                        <div class="input-group-prepend align-items-center">
+                            <label class="text-muted m-0" for="country">Country</label>
+                        </div>
+                        <select id="country" name="country" class="form-control">
+                            <option value="#" selected disabled>Choose country</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="selected-country pt-5 pb-0 pb-lg-4">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1 class="m-0"></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="site-content py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="today py-3">
+                        <h2 class="text-muted">Today</h2>
+                        <div class="row">
+                            <div class="col-lg-4 form-group">
+                                <label class="text-muted w-100" for="today-cases">New Cases</label>
+                                <input type="text" name="today-cases" class="form-control" disabled>
+                            </div>
+                            <div class="col-lg-4 form-group">
+                                <label class="text-muted w-100" for="today-deaths">New Deaths</label>
+                                <input type="text" name="today-deaths" class="form-control" disabled>
+                            </div>
+                            <div class="col-lg-4 form-group">
+                                <label class="text-muted w-100" for="active">Active Cases</label>
+                                <input type="text" name="active" class="form-control" disabled>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="tally py-3">
+                        <h2 class="text-muted">Total</h2>
+                        <div class="row">
+                            <div class="col-lg-3 form-group">
+                                <label class="text-muted w-100" for="tally-confirmed">Cases</label>
+                                <input type="text" name="tally-confirmed" class="form-control" disabled>
+                            </div>
+                            <div class="col-lg-3 form-group">
+                                <label class="text-muted w-100" for="recovered">Recovered</label>
+                                <input type="text" name="recovered" class="form-control" disabled>
+                            </div>
+                            <div class="col-lg-3 form-group">
+                                <label class="text-muted w-100" for="tally-deaths">Deaths</label>
+                                <input type="text" name="tally-deaths" class="form-control" disabled>
+                            </div>
+                            <div class="col-lg-3 form-group">
+                                <label class="text-muted w-100" for="critical">Critical</label>
+                                <input type="text" name="critical" class="form-control" disabled>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-3 mb-lg-0">
+                    <p class="m-0 text-center text-lg-left">Credits to <a href="https://github.com/javieraviles">javieraviles</a> for the free API.</p>
+                </div>
+                <div class="col-lg-6">
+                    <p class="m-0 text-center text-lg-right"><a href="https://adingal.com">adingal</a> &copy; <span class="year"></span></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 <script type="text/javascript" src="js/bundle.js"></script></body>
 </html>
