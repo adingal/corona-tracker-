@@ -23,7 +23,7 @@ items.copyrightYear.innerText = items.curDate.getFullYear();
 async function getData() {
     try {
         const res = await items.axios.get('https://coronavirus-19-api.herokuapp.com/countries');
-        const data = res.data;
+        const { data } = res;
         return data;
     } catch(err) {
         console.log(err);
@@ -34,7 +34,7 @@ async function getData() {
 async function getSelected(country = 'World') {
     try {
         const res = await items.axios.get(`https://coronavirus-19-api.herokuapp.com/countries/${country}`);
-        const data = res.data;
+        const { data } = res;
         return data;
     } catch(err) {
         console.log(err);
@@ -61,15 +61,25 @@ function createOptions(arr) {
 
 // Fill up inputs
 function fillInputs(obj) {
+    const {
+        country,
+        active,
+        todayDeaths,
+        todayCases,
+        deaths,
+        cases,
+        recovered,
+        critical
+    } = obj;
 
-    items.heading.innerText    = obj.country;
-    items.active.value         = addCommas(obj.active);
-    items.todayDeaths.value    = addCommas(obj.todayDeaths);
-    items.todayCases.value     = addCommas(obj.todayCases);
-    items.tallyDeaths.value    = addCommas(obj.deaths);
-    items.tallyConfirmed.value = addCommas(obj.cases);
-    items.recovered.value      = addCommas(obj.recovered);
-    items.critical.value       = addCommas(obj.critical);
+    items.heading.innerText    = country;
+    items.active.value         = addCommas(active);
+    items.todayDeaths.value    = addCommas(todayDeaths);
+    items.todayCases.value     = addCommas(todayCases);
+    items.tallyDeaths.value    = addCommas(deaths);
+    items.tallyConfirmed.value = addCommas(cases);
+    items.recovered.value      = addCommas(recovered);
+    items.critical.value       = addCommas(critical);
     
 }
 
@@ -105,6 +115,7 @@ getSelected()
     })
     .catch(err => console.log(err));
 
+// List data of selected country
 country.addEventListener('change', () => {
     getSelected(country.value)
         .then(res => {
