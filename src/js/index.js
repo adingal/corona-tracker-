@@ -20,7 +20,7 @@ const items = {
 items.copyrightYear.innerText = items.curDate.getFullYear();
 
 // Get all data
-async function getData() {
+const getData = async() => {
     try {
         const res = await items.axios.get('https://coronavirus-19-api.herokuapp.com/countries');
         const { data } = res;
@@ -31,7 +31,7 @@ async function getData() {
 }
 
 // Get data of selected country
-async function getSelected(country = 'World') {
+const getSelected = async(country = 'World') => {
     try {
         const res = await items.axios.get(`https://coronavirus-19-api.herokuapp.com/countries/${country}`);
         const { data } = res;
@@ -42,7 +42,7 @@ async function getSelected(country = 'World') {
 }
 
 // Create options based on the given array
-function createOptions(arr) {
+const createOptions = (arr) => {
     if ( ! arr instanceof Array ) return;
     
     const dataArr = arr.sort((a,b) => sortCountries(a, b));
@@ -60,7 +60,7 @@ function createOptions(arr) {
 }
 
 // Fill up inputs
-function fillInputs(obj) {
+const fillInputs = (obj) => {
     const {
         country,
         active,
@@ -84,15 +84,12 @@ function fillInputs(obj) {
 }
 
 // Add commas to numbers
-function addCommas(x) {
-    return x.toLocaleString();
-}
+const addCommas = (x) => x.toLocaleString();
 
 // Sort array
-function sortCountries(a,b) {
-
-    var countryA = a.country.toUpperCase(); // ignore upper and lowercase
-    var countryB = b.country.toUpperCase(); // ignore upper and lowercase
+const sortCountries = (a,b) => {
+    const countryA = a.country.toUpperCase();
+    const countryB = b.country.toUpperCase();
 
     if (countryA < countryB) {
         return -1;
@@ -110,16 +107,12 @@ getData()
 
 // Set default data for inputs
 getSelected()
-    .then(res => {
-        fillInputs(res);
-    })
+    .then(res => fillInputs(res))
     .catch(err => console.log(err));
 
 // List data of selected country
 country.addEventListener('change', () => {
     getSelected(country.value)
-        .then(res => {
-            fillInputs(res);
-        })
+        .then(res => fillInputs(res))
         .catch(err => console.log(err));
 });
