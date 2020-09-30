@@ -7,7 +7,6 @@ const items = {
     tallyDeaths     : document.querySelector('[name="tally-deaths"]'),
     tallyConfirmed  : document.querySelector('[name="tally-confirmed"]'),
     recovered       : document.querySelector('[name="recovered"]'),
-    critical        : document.querySelector('[name="critical"]'),
     heading         : document.querySelector('h1'),
     country         : document.getElementById('country'),
     copyrightYear   : document.querySelector('.year'),
@@ -68,8 +67,7 @@ const fillInputs = (obj) => {
         todayCases,
         deaths,
         cases,
-        recovered,
-        critical
+        recovered
     } = obj;
 
     items.heading.innerText    = country;
@@ -79,7 +77,6 @@ const fillInputs = (obj) => {
     items.tallyDeaths.value    = addCommas(deaths);
     items.tallyConfirmed.value = addCommas(cases);
     items.recovered.value      = addCommas(recovered);
-    items.critical.value       = addCommas(critical);
     
 }
 
