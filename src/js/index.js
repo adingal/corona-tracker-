@@ -1,17 +1,21 @@
 // Global variables
 const items = {
 
+    axios           : require('axios'),
+    curDate         : new Date(),
+    winHeight       : window.innerHeight,
+    header          : document.querySelector('#site-header'),
+    footer          : document.querySelector('#site-footer'),
+    countries       : document.querySelector('#countries'),
+    country         : document.querySelector('#country'),
+    copyrightYear   : document.querySelector('.year'),
+    heading         : document.querySelector('h1'),
     active          : document.querySelector('[name="active"]'),
     todayDeaths     : document.querySelector('[name="today-deaths"]'),
     todayCases      : document.querySelector('[name="today-cases"]'),
     tallyDeaths     : document.querySelector('[name="tally-deaths"]'),
     tallyConfirmed  : document.querySelector('[name="tally-confirmed"]'),
-    recovered       : document.querySelector('[name="recovered"]'),
-    heading         : document.querySelector('h1'),
-    country         : document.getElementById('country'),
-    copyrightYear   : document.querySelector('.year'),
-    curDate         : new Date(),
-    axios           : require('axios')
+    recovered       : document.querySelector('[name="recovered"]')
 
 }
 
@@ -97,6 +101,11 @@ const sortCountries = (a,b) => {
     return 0;
 }
 
+// Get current height of given element
+const getHeight = (el) => {
+    return el.offsetHeight;
+}
+
 // Get data for country options
 getData()
     .then(res => createOptions(res))
@@ -112,4 +121,13 @@ country.addEventListener('change', () => {
     getSelected(country.value)
         .then(res => fillInputs(res))
         .catch(err => console.log(err));
+});
+
+// Set countries container height
+window.addEventListener('load', () => {
+    const headerHeight = getHeight(items.header);
+    const footerHeight = getHeight(items.footer);
+    const countriesHeight = items.winHeight - (headerHeight + footerHeight);
+    
+    items.countries.style.maxHeight = countriesHeight + 'px';
 });

@@ -49,11 +49,22 @@ input {
 }
 
 #countries {
-    max-height: 740px;
-    overflow: scroll;
+    margin: 20px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
-.country p {
+#countries > div {
+    border-bottom: 1px solid #ddd;
+}
+
+#countries > div:last-child {
+    border-bottom: none;
+}
+
+#countries p {
     font-size: .75em;
 }
 
@@ -68,5 +79,15 @@ input {
 @media screen and (max-width: 991px) {
     #site-footer {
         position: relative;
-    }
+    } 
+}
+
+@media screen and (min-width: 991px) {
+    #countries {
+        background-color: #fff;
+        margin: 0;
+        border-top: none;
+        border-bottom: none;
+        border-radius: 0;
+    }   
 }
