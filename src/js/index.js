@@ -126,14 +126,14 @@ const createCountryItems = (arr) => {
         let templateStr = `
             <h3 class="mb-2 text-dark h5">${country}</h3>
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-sm-6">
                     <div>
                         <p class="m-0">New Cases: <span class="text-dark">${addCommas(todayCases)}</span></p>
                         <p class="m-0">New Deaths: <span class="text-dark">${addCommas(todayDeaths)}</span></p>
                         <p class="m-0">Active Cases: <span class="text-dark">${addCommas(active)}</span></p>
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-sm-6">
                     <div>
                         <p class="m-0">Total Cases: <span class="text-dark">${addCommas(cases)}</span></p>
                         <p class="m-0">Total Deaths: <span class="text-dark">${addCommas(deaths)}</span></p>
