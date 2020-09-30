@@ -85,7 +85,11 @@ const fillInputs = (obj) => {
 }
 
 // Add commas to numbers
-const addCommas = (x) => x.toLocaleString();
+const addCommas = (x) => {
+    if (!x || x === 0) return 0;
+
+    return x.toLocaleString();
+}
 
 // Sort array
 const sortCountries = (a,b) => {
@@ -106,9 +110,50 @@ const getHeight = (el) => {
     return el.offsetHeight;
 }
 
+// Create summary on sidebar
+const createCountryItems = (arr) => {
+    if (!arr instanceof Array) return;
+
+    const dataArr = arr.sort((a, b) => sortCountries(a, b));
+
+    for (let i = 0; i < dataArr.length; i++) {
+
+        const { country, todayCases, todayDeaths, active, cases, deaths, recovered } = dataArr[i];
+
+        const container = document.createElement('div');
+        container.className = 'text-secondary mb-3 pb-2';
+
+        let templateStr = `
+            <h3 class="mb-2 text-dark h5">${country}</h3>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div>
+                        <p class="m-0">New Cases: <span class="text-dark">${addCommas(todayCases)}</span></p>
+                        <p class="m-0">New Deaths: <span class="text-dark">${addCommas(todayDeaths)}</span></p>
+                        <p class="m-0">Active Cases: <span class="text-dark">${addCommas(active)}</span></p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div>
+                        <p class="m-0">Total Cases: <span class="text-dark">${addCommas(cases)}</span></p>
+                        <p class="m-0">Total Deaths: <span class="text-dark">${addCommas(deaths)}</span></p>
+                        <p class="m-0">Recovered: <span class="text-dark">${addCommas(recovered)}</span></p>
+                    </div>
+                </div>
+            </div>     
+        `;
+
+        container.innerHTML = templateStr;
+        items.countries.appendChild(container);
+    }    
+} 
+
 // Get data for country options
 getData()
-    .then(res => createOptions(res))
+    .then(res => {
+        createOptions(res);
+        createCountryItems(res);
+    })
     .catch(err => console.log(err));
 
 // Set default data for inputs
